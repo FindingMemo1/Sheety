@@ -1,6 +1,5 @@
-// src/components/steps/Step1CoreInfo.tsx
 import React from 'react';
-import { useWizardStore } from '@/store/useWizardStore';
+import { useWizardStore } from '../../store/useWizardStore';
 import { StepContainer } from '../StepContainer';
 
 export const Step1CoreInfo: React.FC = () => {

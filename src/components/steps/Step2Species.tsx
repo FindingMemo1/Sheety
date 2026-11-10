@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { FiveEToolsAdapter } from '@/adapters/5eToolsAdapter';
-import { useWizardStore } from '@/store/useWizardStore';
+import { FiveEToolsAdapter } from '../../adapters/5eToolsAdapter';
+import { useWizardStore } from '../../store/useWizardStore';
 import { StepContainer } from '../StepContainer';
-import { Species2024 } from '@/types/character';
+import { Species2024 } from '../../types/character';
 
 export const Step2Species: React.FC = () => {
   const [speciesList, setSpeciesList] = useState<Species2024[]>([]);

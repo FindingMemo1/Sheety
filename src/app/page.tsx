@@ -1,10 +1,10 @@
 'use client';
 
-import { WizardLayout } from '@/components/WizardLayout';
-import { useWizardStore } from '@/store/useWizardStore';
-import { Step1CoreInfo } from '@/components/steps/Step1CoreInfo';
-import { Step2Species } from '@/components/steps/Step2Species';
-import { CharacterState } from '@/types/character';
+import { WizardLayout } from '../components/WizardLayout';
+import { useWizardStore } from '../store/useWizardStore';
+import { Step1CoreInfo } from '../components/steps/Step1CoreInfo';
+import { Step2Species } from '../components/steps/Step2Species';
+import { CharacterState } from '../types/character';
 
 export default function Home() {
   const currentStep = useWizardStore((state: CharacterState) => state.currentStep);

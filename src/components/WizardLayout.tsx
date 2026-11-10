@@ -1,6 +1,6 @@
-// components/WizardLayout.tsx
 import React, { useState } from 'react';
 import { useWizardStore } from '../store/useWizardStore';
+import { AbilityScoreName } from '../types/character';
 
 const STEP_TITLES = [
   'Core Info',
