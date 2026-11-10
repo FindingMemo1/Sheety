@@ -1,4 +1,3 @@
-// src/components/steps/Step2Species.tsx
 import React, { useEffect, useState } from 'react';
 import { FiveEToolsAdapter } from '@/adapters/5eToolsAdapter';
 import { useWizardStore } from '@/store/useWizardStore';
@@ -13,9 +12,10 @@ export const Step2Species: React.FC = () => {
     fetch('/data/races.json')
       .then((res) => res.json())
       .then((data) => {
-        const parsed = FiveEToolsAdapter.adaptSpeciesList(data.race);
+        const parsed = FiveEToolsAdapter.adaptSpeciesList(data.race || []);
         setSpeciesList(parsed);
-      });
+      })
+      .catch(() => setSpeciesList([]));
   }, []);
 
   return (
@@ -40,7 +40,7 @@ export const Step2Species: React.FC = () => {
               <h3 className="font-bold text-base text-slate-100">{species.name}</h3>
               <p className="text-xs text-slate-400 mt-1">Speed: {species.speed} ft.</p>
               <div className="mt-3 space-y-1">
-                {species.traits.slice(0, 2).map((trait) => (
+                {species.traits.slice(0, 2).map((trait: { name: string; description: string }) => (
                   <p key={trait.name} className="text-xs text-slate-400 line-clamp-2">
                     <strong className="text-slate-200">{trait.name}:</strong> {trait.description}
                   </p>
